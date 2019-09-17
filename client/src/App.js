@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PlayerList from './Components/PlayerList'
+import { useLocalStorage } from './Components/DarkMode';
 
-function App() {
+const App = () => {
+
+  const [darkMode, setDarkMode] = useLocalStorage('dark-mode', false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={darkMode ? 'App dark-mode' : 'App'}>
+      <button onClick={() => setDarkMode(!darkMode)}>Enable Dark Mode</button>
+      <PlayerList />
     </div>
-  );
+  ); 
 }
 
 export default App;
