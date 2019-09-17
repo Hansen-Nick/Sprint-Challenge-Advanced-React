@@ -31,3 +31,15 @@
     transform: rotate(360deg);
   }
 }
+
+.cardDivs {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 10px 0;
+}
+
+.App.dark-mode {
+  background-color: #585858;
+  color: white;
+}
